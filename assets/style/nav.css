@@ -1,0 +1,123 @@
+#nav-toggle-label {
+    position: absolute;
+
+    top: 0;
+    right: 0px;
+
+    float: right;
+
+    width: auto;
+    height: 63px;
+
+    cursor: pointer;
+
+    z-index: 11;
+
+    background-color: white;
+}
+
+#nav-toggle-label a {
+    margin-right: 63px;
+    line-height: 63px;
+
+    padding: 0;
+    padding-left: 15px;
+}
+
+#nav-toggle-label:hover {
+    background-color: var(--light);
+}
+
+#nav-toggle-label span {
+    position: absolute;
+    right: 0;
+    top: 26px;
+
+    margin-top: 3px;
+    margin-right: 15px;
+
+    height: 5px;
+    width: 33px;
+
+    background-color: var(--black);
+
+    transition: all 500ms ease-in-out;
+}
+
+#nav-toggle-label span:first-child {
+    top: 15px;
+}
+
+#nav-toggle-label span:last-child {
+    top: 37px;
+}
+
+#nav-toggle:checked ~ #nav-toggle-label span {
+    top: 26px;
+}
+
+#nav-toggle:checked ~ #nav-toggle-label span:first-child, #nav-toggle:checked ~ #nav-toggle-label span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+#nav-toggle:checked ~ #nav-toggle-label span:nth-child(3), #nav-toggle:checked ~ #nav-toggle-label span:last-child {
+    transform: rotate(-45deg);
+}
+
+.nav-list {
+    list-style-type: none;
+}
+
+.nav-list-collapse {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+
+    width: 100%;
+    height: calc(100% - 63px - 30px);
+    overflow-y: auto;
+
+    padding-bottom: 30px;
+
+    z-index: 9; 
+
+    transition: 500ms ease-in-out;
+
+    text-align: center;
+
+    background-color: white;
+}
+
+#nav-toggle:checked ~ .nav-list-collapse {
+    bottom: 0%;
+}
+
+div.nav-brand {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 10;
+
+    background-color: white;
+    width: 100%;
+
+    height: 63px;
+    line-height: 63px;
+
+    overflow: hidden;
+}
+
+a.nav-brand {
+    font-size: 20px;
+    vertical-align: middle;
+
+    padding: calc((56px - 20px) / 2) 30px;
+}
+
+@media (orientation: landscape) and (min-width: 570px) {
+    a.nav-brand {
+        font-size: 24px;
+        padding: calc((55px - 24px) / 2) 30px;
+    }
+}
